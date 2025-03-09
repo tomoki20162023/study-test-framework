@@ -1,0 +1,101 @@
+-
+	/*
+		汎用のパスの管理クラス
+		- パスの経路を配列で管理
+		- 区切り文字で結合した文字列を出力可能とする
+		- 指定のパス（絶対、相対）を参照する配列/文字列を管理する
+	*/
+	class PathManager {
+		constructor(_parentPaths, _separator) {
+			this._parentPaths = this._getParentPaths(_parentPaths);
+			this._validator = this._getValidator();
+			this._separator = _separator || "/";
+		}
+
+		_getValidator() {
+			let validator = {
+				array: (_paths) => this._validArray(_paths),
+				string: (_paths) => this._validString(_paths),
+				childs: (_paths) => this._validChild(_paths)
+			};
+			return validator;
+		}
+
+		_getDefaultParentPaths() {
+			return ["."];
+		}
+
+		_throwError(msg, info) {
+			// throw new Error([msg, JSON.stringify(info)].join("\t"));
+			console.log([msg, JSON.stringify(info)].join("\t"));
+		}
+
+		_getParentPaths(_paths) {
+			if (!this._validChild(_paths)) {
+				this._throwError("有効なパスではありません。", { func: "_getParentPaths", args: _paths });
+			}
+
+			if (this._validArray(_paths)) {
+				if (_paths.length > 0) return [].concat(_paths);
+				return this._getDefaultParentPaths();
+			}
+
+			// String/stringの場合
+			if (!_paths) {
+				return this._getDefaultParentPaths();
+			}
+
+			return [].concat(_paths);
+		}
+
+		_validArray(_paths) {
+			if (Array.isArray(_paths)) return true;
+			return false;
+		}
+
+		_validString(_paths) {
+			if (_paths instanceof String) return true;
+			if ("string" == (typeof _paths)) return true;
+			return false;
+		}
+
+		_validChild(_paths) {
+			if (this._validArray(_paths)) return true;
+			if (this._validString(_paths)) return true;
+			return false;
+		}
+
+		// 親フォルダ、配下の配列パス、または指定の管理フォルダのパス配列を返す
+		get(_target) {
+			// false判定の入力は親フォルダを返す
+			if (!_target) {
+				return this._parentPaths.slice();
+			}
+
+			// 配列の場合
+			if (this._validator.array(_target)) {
+				if (_target.length == 0) {
+					return this._parentPaths.slice();
+				}
+				return this._parentPaths.concat(_target);
+			}
+
+			// 管理フォルダは文字列のみ
+			if (!this._validator.string(_target)) {
+				this._throwError("有効なパス文字列ではありません", { func: "get", args: _target });
+			}
+			return [].concat(this._parentPaths, _target);
+		}
+
+		getPath(_childs) {
+			if (!this._validator.array(_childs)) {
+				// this._throwError("有効なパス配列ではありません", { func: "getPath", args: _childs });
+				return "";
+			}
+
+			return this._parentPaths.concat(_childs).join(this._separator);
+		}
+	}
+
+	console.debug("loaded PathManager.");
+

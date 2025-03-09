@@ -1,0 +1,12 @@
+-
+	let pathRelativeRootList = getRelativeRootPathList(rootDepth);
+	let relativeRoot = new PathManager(pathRelativeRootList);
+
+	// ライブラリ用ルートパス
+	let pathLibRootList = relativeRoot.get("libs");
+	let libRoot = new PathManager(pathLibRootList);
+
+	// サイト用ルートパス
+	let pathSiteRootList = relativeRoot.get([]);
+	let siteRoot = new PathManager(pathSiteRootList);
+

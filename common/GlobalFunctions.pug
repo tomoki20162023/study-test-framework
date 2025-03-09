@@ -1,0 +1,15 @@
+-
+	function getPath(pathList) {
+		return pathList.join("/");
+	}
+
+	function getRelativeRootPathList(rootDepth) {
+		return [...Array(rootDepth)].map((_) => "..");
+	}
+
+	function getRelativeRootPath(rootDepth) {
+		return getPath(getRelativeRootPathList(rootDepth));
+	}
+
+	console.log("Loaded Global Functions.");
+

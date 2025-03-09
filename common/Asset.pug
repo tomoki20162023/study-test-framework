@@ -1,0 +1,11 @@
+-
+	// 共通のアセット群を参照する(ルートパス)
+	let commonAssetsList = siteRoot.get(["common", "assets"]);
+	let commonAssets = new PathManager(commonAssetsList);
+
+	// デフォルトのアセット群を参照する(カレントパス)
+	let curAssetsList = ["assets"];
+	let curAssets = new PathManager(curAssetsList);
+
+	console.log("loaded common assets.");
+

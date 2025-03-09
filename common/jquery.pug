@@ -1,0 +1,14 @@
+//- jQuery.js/jQuery UI ロードモジュール
+-
+	let jQueryVersion = "3.6.3";
+	let jQueryUiVersion = "1.13.2";
+	let jQueryCommonPath = new PathManager(libRoot.get(["jquery"]));
+	let jQueryPath = new PathManager(jQueryCommonPath.get([jQueryVersion]));
+	let jQueryUiPath = new PathManager(jQueryCommonPath.get(["ui", jQueryUiVersion]));
+
+link(rel="stylesheet" href=jQueryUiPath.getPath(["jquery-ui.min.css"]))
+script(src=jQueryPath.getPath(["min.js"]))
+script(src=jQueryUiPath.getPath(["jquery-ui.min.js"]))
+
+- console.log("loaded jQuery/UI.");
+

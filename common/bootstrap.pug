@@ -1,0 +1,10 @@
+-
+	// bootstrap ロードモジュール
+	let bootstrapVersion = "5.0.2";
+	let bootstrapPath = new PathManager(libRoot.get(["bootstrap", bootstrapVersion]));
+
+link(rel="stylesheet" href=bootstrapPath.getPath(["css", "bootstrap.min.css"]))
+script(src=bootstrapPath.getPath(["js", "bootstrap.min.js"]))
+
+- console.log("loaded bootstrap.");
+

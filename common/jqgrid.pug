@@ -1,0 +1,12 @@
+//- jQuery Grid module
+-
+	let jqGridVersion = "4.4.3";
+	let jqGridCommonPath = new PathManager(libRoot.get(["jqGrid"]));
+	let jqGridPath = new PathManager(jqGridCommonPath.get([jqGridVersion]));
+
+link(rel="stylesheet" href=jqGridPath.getPath(["css", "ui.jqgrid.css"]))
+script(src=jqGridPath.getPath(["js", "i18n", "grid.locale-ja.js"]))
+script(src=jqGridPath.getPath(["js", "jquery.jqGrid.src.js"]))
+
+- console.log("loaded jqGrid.");
+

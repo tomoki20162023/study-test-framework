@@ -1,0 +1,11 @@
+//- highlight.jsロードモジュール
+- let highlightPath = new PathManager(libRoot.get(["highlight"]));
+
+link(rel="stylesheet" href=highlightPath.getPath(["styles", "default.min.css"]))
+script(src=highlightPath.getPath(["highlight.min.js"]))
+
+script.
+	hljs.highlightAll();
+
+- console.log("loaded highlight.");
+
