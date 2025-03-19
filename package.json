@@ -19,5 +19,9 @@
   "main": "index.js",
   "scripts": {
     "test": "test"
+  },
+  "devDependencies": {
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3"
   }
 }

@@ -1,5 +1,6 @@
 # folder
 .git
+node_modules
 
 # file
 *.swp
