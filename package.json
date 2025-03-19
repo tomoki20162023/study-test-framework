@@ -1,0 +1,23 @@
+{
+  "name": "study-test-framework",
+  "version": "1.0.0",
+  "description": "framework",
+  "keywords": [
+    "framework"
+  ],
+  "homepage": "https://github.com/tomoki20162023/study-test-framework#readme",
+  "bugs": {
+    "url": "https://github.com/tomoki20162023/study-test-framework/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomoki20162023/study-test-framework.git"
+  },
+  "license": "ISC",
+  "author": "t_ishikawa",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  }
+}
