@@ -11,16 +11,6 @@ export default [
 		]
 	},
 	{
-		name: "default",
-		files: [ "**/*.js" ],
-		languageOptions: {
-			sourceType: "script"
-		},
-		rules: {
-			semi: "error"
-		}
-	},
-	{
 		languageOptions: {
 			globals: {
 				...globals.browser,
@@ -29,4 +19,15 @@ export default [
 		}
 	},
 	pluginJs.configs.recommended,
+	{
+		name: "custom",
+		files: [ "**/*.js" ],
+		languageOptions: {
+			sourceType: "script"
+		},
+		rules: {
+			"no-undef": "warn",
+			"no-unused-vars": "warn",
+		}
+	},
 ];
