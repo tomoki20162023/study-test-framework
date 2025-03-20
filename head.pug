@@ -1,5 +1,13 @@
 title テストフレームワーク学習
 
 script(src=curAssets.getPath(["js", "main.js"]))
+script(src=curAssets.getPath(["js", "simple-tester.js"]))
 link(rel="stylesheet" href=curAssets.getPath(["css", "main.css"]))
+
+// test code
+-
+	let testPathList = siteRoot.get(["test"]);
+	let testPath = new PathManager(testPathList);
+
+script(src=testPath.getPath(["simple-tester.js"]))
 
