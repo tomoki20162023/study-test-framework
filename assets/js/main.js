@@ -1,6 +1,6 @@
 $(() => {
 	console.debug("start.");
-	$('#test').on('click', t);
+	$("#test").on("click", t);
 });
 
 function t() {

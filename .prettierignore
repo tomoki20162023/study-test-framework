@@ -1,0 +1,13 @@
+# folders
+libs
+node_modules
+_assets_template
+.git
+
+# files
+**/*.swp
+**/*.md
+**/*.pug
+**/*.json
+.git*
+

@@ -22,7 +22,6 @@ div[id^="tabs-head-"] {
 }
 
 .img-size1 {
- max-height: 75%;
- /* max-width: 49%; */
+	max-height: 75%;
+	/* max-width: 49%; */
 }
-

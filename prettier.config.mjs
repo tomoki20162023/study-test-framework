@@ -1,0 +1,20 @@
+export default {
+	trailingComma: "es5",
+	printWidth: 160,
+	tabWidth: 4,
+	useTabs: true,
+	semi: true,
+	singleQuote: false,
+	bracketSpacing: true,
+	objectWrap: "preserve",
+	bracketSameLine: false,
+	arrowParens: "avoid",
+	rangeStart: 0,
+	rangeEnd: Infinity,
+	requirePragma: false,
+	insertPragma: false,
+	htmlWhitespaceSensitivity: "strict",
+	endOfLine: "crlf",
+	embeddedLanguageFormatting: "auto",
+};
+
