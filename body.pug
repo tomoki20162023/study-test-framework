@@ -1,6 +1,13 @@
+mixin ablank(url, text)
+	a(href=url target="_blank")&attributes(attribute)= text
+
 div#main
 	h1 Javascript
 
-div#test
+#test
 	button#t.btn.btn-info(naem="test" accesskey="t") テスト(&t)
+
+#refs
+	ul
+		li: +ablank("https://qiita.com/YUM_3/items/b7c1cd1be9da92625143", "[Qiita] BDDスタイル")
 
